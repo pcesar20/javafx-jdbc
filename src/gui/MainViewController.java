@@ -70,27 +70,5 @@ public class MainViewController implements Initializable {
 	}
 		
 	}
-	
-	private void loadView2(String absoluteName)  {
-		try{
-		FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
-		VBox newVBox = loader.load();
-		Scene mainScene = Main.getMainScene();
-		VBox mainVbox = (VBox) ((ScrollPane) mainScene.getRoot()).getContent();
-		
-		Node mainMenu = mainVbox.getChildren().get(0);
-		mainVbox.getChildren().clear();
-		mainVbox.getChildren().add(mainMenu);
-		mainVbox.getChildren().addAll(newVBox.getChildren());
-		
-		ListaDepartamentoController controler = loader.getController();
-		controler.setDepartamentoServico(new DepartamentoServico());
-		controler.updateTableView();
-		
-	} catch (IOException e) {
-		Alerts.showAlert("Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
-	}
-		
-	}
 
 }
