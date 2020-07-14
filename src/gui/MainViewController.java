@@ -33,10 +33,14 @@ public class MainViewController implements Initializable {
 	
 	@FXML
 	public void onmenuItemDepartamentoAction() {
-		loadView("/gui/ListaDepartamento.fxml", (ListaDepartamentoController controlador) -> {
-			controlador.setDepartamentoServico(new DepartamentoServico());
-			controlador.updateTableView();
+		loadView("/gui/ListaDepartamento.fxml", (ListaDepartamentoController control) -> {
+			control.setDepartamentoServico(new DepartamentoServico());
+			control.updateTableView();
 		});
+		//		loadView("/gui/ListaDepartamento.fxml", (ListaDepartamentoController controlador) -> {
+//			controlador.setDepartamentoServico(new DepartamentoServico());
+//			controlador.updateTableView();
+//		});
 	}
 	
 	@FXML
